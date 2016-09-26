@@ -1,0 +1,31 @@
+{
+  "name": "symfony3-base",
+  "version": "1.0.0",
+  "private": true,
+  "description": "base symfony 3 package with gulp, user bundle, bootstrap, jquery and all the jazz",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Czarnodziej",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-uglifycss": "^1.0.6"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "datatables.net": "^1.10.12",
+    "datatables.net-bs": "^1.10.12",
+    "font-awesome": "^4.6.3",
+    "jquery": "^3.1.1",
+    "symfony-collection": "^1.1.3"
+  }
+}
