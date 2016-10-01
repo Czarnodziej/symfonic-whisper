@@ -7,3 +7,13 @@ Needed things:
 - gulp
 - user bundle
 - basic frontend/backend logic
+
+TODO:
+ - user bundle
+ - frontend/backend
+
+Gulp:
+```
+# prod env
+gulp --prod
+```

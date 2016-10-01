@@ -1,9 +1,12 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
-var sourcemaps = require('gulp-sourcemaps');
-var del = require('del');
+var gulp      = require('gulp');
+var concat    = require('gulp-concat');
+var uglify    = require('gulp-uglify');
+var uglifycss = require('gulp-uglifycss');
+var imagemin  = require('gulp-imagemin');
+var del       = require('del');
+var argv      = require('yargs').argv;
+var gulpif    = require('gulp-if');
+var rename    = require('gulp-rename');
 
 var resourceDirectory = 'app/Resources/public/';
 
@@ -31,37 +34,36 @@ var paths = {
     ]
 };
 
-// Not all tasks need to use streams
-// A gulpfile is just another node program and you can use any package available on npm
-gulp.task('clean', function () {
-    // You can use multiple globbing patterns as you would with `gulp.src`
-    return del(['build']);
+gulp.task('scripts', function () {
+    return gulp.src(paths.scripts)
+        .pipe(concat('script.js'))
+        .pipe(gulpif(argv.prod, uglify()))
+        .pipe(gulpif(argv.prod, rename({suffix: '.min'})))
+        .pipe(gulp.dest(destinationDirectory + '/js'));
 });
 
-gulp.task('scripts', ['clean'], function () {
-    // Minify and copy all JavaScript (except vendor scripts)
-    // with sourcemaps all the way down
-    return gulp.src(paths.scripts)
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(concat('all.min.js'))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(destinationDirectory+'/js'));
+gulp.task('styles', function () {
+    return gulp.src(paths.styles)
+        .pipe(concat('style.css'))
+        .pipe(gulpif(argv.prod, uglifycss()))
+        .pipe(gulpif(argv.prod, rename({suffix: '.min'})))
+        .pipe(gulp.dest(destinationDirectory + '/css'));
 });
 
 // Copy all static images
-gulp.task('images', ['clean'], function () {
+gulp.task('images', function () {
     return gulp.src(paths.images)
-    // Pass in options to the task
+        // Pass in options to the task
         .pipe(imagemin({optimizationLevel: 5}))
-        .pipe(gulp.dest(destinationDirectory+'/img'));
+        .pipe(gulp.dest(destinationDirectory + '/img'));
 });
 
 // Rerun the task when a file changes
 gulp.task('watch', function () {
     gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.images, ['images']);
+    gulp.watch(paths.styles, ['styles']);
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['watch', 'scripts', 'images']);
+gulp.task('default', ['scripts', 'styles', 'images']);

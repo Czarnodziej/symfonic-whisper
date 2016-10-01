@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+
+        {% if app.environment == 'dev' %}
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+        {% elseif app.environment == 'prod' %}
+            <link rel="stylesheet" href="{{ asset('css/style.min.css') }}"/>
+        {% endif %}
+
+    {% endblock %}
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+
+
+</head>
+<body>
+{% block body %}{% endblock %}
+{% block javascripts %}
+    <script>
+        var globalConfig                 = {};
+    </script>
+    {% if app.environment == 'dev' %}
+    <script src="{{ asset('js/script.js') }}"></script>
+    {% elseif app.environment == 'prod' %}
+    <script src="{{ asset('js/script.min.js') }}"></script>
+    {% endif %}
+
+{% endblock %}
+</body>
 </html>

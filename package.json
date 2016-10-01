@@ -25,7 +25,11 @@
     "datatables.net": "^1.10.12",
     "datatables.net-bs": "^1.10.12",
     "font-awesome": "^4.6.3",
+    "gulp-if": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglifycss": "^1.0.6",
     "jquery": "^3.1.1",
-    "symfony-collection": "^1.1.3"
+    "symfony-collection": "^1.1.3",
+    "yargs": "^6.0.0"
   }
 }
