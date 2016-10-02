@@ -16,4 +16,13 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('main/index.html.twig');
     }
+
+    /**
+     * @Route("/admin", name="admin")
+     */
+    public function adminAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('admin/index.html.twig');
+    }
 }
