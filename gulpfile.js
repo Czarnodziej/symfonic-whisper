@@ -20,11 +20,14 @@ var paths = {
         'node_modules/datatables.net/js/jquery.dataTables.js',
         'node_modules/datatables.net-bs/js/dataTables.bootstrap.js',
         'node_modules/symfony-collection/jquery.collection.js',
+        'node_modules/admin-lte/dist/js/app.js',
         resourceDirectory + 'js/**/*.js'
     ],
     styles: [
         'node_modules/bootstrap/dist/css/bootstrap.css',
         'node_modules/font-awesome/css/font-awesome.css',
+        'node_modules/admin-lte/dist/css/AdminLTE.css',
+        'node_modules/admin-lte/dist/css/skins/skin-blue.css',
         resourceDirectory + 'css/**/*.css'
     ],
     images: 'client/img/**/*',
@@ -58,12 +61,19 @@ gulp.task('images', function () {
         .pipe(gulp.dest(destinationDirectory + '/img'));
 });
 
+// Fonts
+gulp.task('fonts', function () {
+    return gulp.src(paths.fonts)
+        .pipe(gulp.dest(destinationDirectory + 'fonts'));
+});
+
 // Rerun the task when a file changes
 gulp.task('watch', function () {
     gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.images, ['images']);
     gulp.watch(paths.styles, ['styles']);
+    gulp.watch(paths.fonts, ['fonts']);
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['scripts', 'styles', 'images']);
+gulp.task('default', ['scripts', 'styles', 'images', 'fonts']);

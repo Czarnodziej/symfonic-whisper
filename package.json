@@ -21,6 +21,7 @@
     "gulp-uglifycss": "^1.0.6"
   },
   "dependencies": {
+    "admin-lte": "^2.3.6",
     "bootstrap": "^3.3.7",
     "datatables.net": "^1.10.12",
     "datatables.net-bs": "^1.10.12",

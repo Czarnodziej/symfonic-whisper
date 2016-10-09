@@ -9,7 +9,7 @@ Needed things:
 - basic frontend/backend logic
 
 TODO:
- - user bundle
+ - basic template (AdminLTE + simple frontend)
  - frontend/backend
 
 Gulp:

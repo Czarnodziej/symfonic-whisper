@@ -1,6 +1,55 @@
 {% extends "base.html.twig" %}
 {% block body %}
 
-<div>Hello world admin!</div>
+    <div class="wrapper">
+
+        <!-- Main Header -->
+        {% block header %}
+            {% include ":admin/partials:header.html.twig" %}
+        {% endblock %}
+        <!-- Left side column. contains the logo and sidebar -->
+        {% block sidebar %}
+            {% include ":admin/partials:sidebar.html.twig" %}
+        {% endblock %}
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                {% block contentHeader %}
+                <h1>
+                    Page Header
+                    <small>Optional description</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                    <li class="active">Here</li>
+                </ol>
+                {% endblock %}
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                {% block content %}
+                <!-- Your Page Content Here -->
+                {% endblock %}
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        {% block footer %}
+            {% include ":admin/partials:footer.html.twig" %}
+        {% endblock %}
+        <!-- Main Footer -->
+
+
+        <!-- Control Sidebar -->
+        {% block controlSidebar %}
+            {% include ":admin/partials:controlSidebar.html.twig" %}
+        {% endblock %}
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+             immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
 
 {% endblock %}
