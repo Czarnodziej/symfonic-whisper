@@ -77,3 +77,6 @@ gulp.task('watch', function () {
 
 // The default task (called when you run `gulp` from cli)
 gulp.task('default', ['scripts', 'styles', 'images', 'fonts']);
+
+//prod task:
+//gulp --prod
