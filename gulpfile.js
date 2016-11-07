@@ -67,16 +67,19 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest(destinationDirectory + 'fonts'));
 });
 
+gulp.task('formCollection', function () {   return gulp.src('node_modules/symfony-collection/jquery.collection.html.twig')     .pipe(gulp.dest('app/Resources/views/forms/'));   } );
+
 // Rerun the task when a file changes
 gulp.task('watch', function () {
     gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.images, ['images']);
     gulp.watch(paths.styles, ['styles']);
     gulp.watch(paths.fonts, ['fonts']);
+    gulp.watch('node_modules/symfony-collection/jquery.collection.html.twig', ['formCollection']);
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['scripts', 'styles', 'images', 'fonts']);
+gulp.task('default', ['scripts', 'styles', 'images', 'fonts', 'formCollection']);
 
 //prod task:
 //gulp --prod

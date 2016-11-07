@@ -9,8 +9,7 @@ Needed things:
 - basic frontend/backend logic
 
 TODO:
- - basic template (AdminLTE + simple frontend)
- - frontend/backend
+ - basic tests
 
 Gulp:
 ```
