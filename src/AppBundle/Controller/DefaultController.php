@@ -13,16 +13,14 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
         return $this->render('main/index.html.twig');
     }
 
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/dashboard", name="dashboard")
      */
-    public function adminAction(Request $request)
+    public function dashboardAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('admin/index.html.twig');
+        return $this->render('dashboard/index.html.twig');
     }
 }

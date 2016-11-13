@@ -10,6 +10,7 @@ Needed things:
 
 TODO:
  - basic tests
+ - redirect user to proper view after logged in resetted its password
 
 Gulp:
 ```
