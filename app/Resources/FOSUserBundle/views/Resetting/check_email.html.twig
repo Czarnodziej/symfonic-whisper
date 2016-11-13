@@ -1,0 +1,11 @@
+{% extends app.user == 'false'
+? 'FOSUserBundle::layout.html.twig'
+: 'dashboard/index.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content %}
+    <p>
+        {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime}) }}
+    </p>
+{% endblock %}

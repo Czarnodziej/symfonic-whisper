@@ -18,11 +18,14 @@
         <input type="password" id="password" class="form-control" name="_password" required="required"
                placeholder="{{ 'security.login.password'|trans }}">
 
-        <div class="checkbox">
+        <div class="checkbox pull-left">
             <label>
                 <input type="checkbox" id="remember_me" name="_remember_me"
                        value="on">{{ 'security.login.remember_me'|trans }}
             </label>
+        </div>
+        <div class="pull-right password-login-reset">
+            <a href="{{ path('fos_user_resetting_request') }}">{{ 'resetting.request.submit'|trans }}</a>
         </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" id="_submit"
