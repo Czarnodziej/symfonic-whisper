@@ -1,3 +1,16 @@
 .username-panel {
     color:white;
 }
+
+.user-side-header {
+    padding: 10px;
+    text-align: center;
+    background-color: #3c8dbc;
+    color: white;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.user-side-header p {
+    margin: 0;
+}

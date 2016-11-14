@@ -1,16 +1,17 @@
 symfony3-base
 =============
 
-A Symfony project created on September 26, 2016, 10:55 pm.
-
-Needed things:
+Requirements:
 - gulp
 - user bundle
 - basic frontend/backend logic
 
 TODO:
- - basic tests
+ - language in route prefix
+ - redirect logged in users from login to dashboard after coming to /login path
  - redirect user to proper view after logged in resetted its password
+ - flash after submitted forms
+ - basic tests
 
 Gulp:
 ```

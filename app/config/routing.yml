@@ -1,5 +1,17 @@
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /%locale%/
+        permanent: true
 app:
     resource: "@AppBundle/Controller/"
+    prefix:   /{_locale}
     type:     annotation
+    requirements:
+        _locale: en|pl
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /{_locale}
+    requirements:
+        _locale: en|pl

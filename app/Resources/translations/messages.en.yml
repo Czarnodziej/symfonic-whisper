@@ -1,2 +1,4 @@
 main:
     welcome: "Welcome!"
+    dashboard: Dashboard
+    hello: "Hello world"

@@ -1,6 +1,18 @@
 {% extends "base.html.twig" %}
 {% block body %}
 
-<div>Hello world</div>
+    <div>{{ "main.hello"|trans }}</div>
 
+    {% if app.user %}
+        <div>
+            <a href="{{ path("dashboard") }}">{{ "main.dashboard"|trans }}</a>
+        </div>
+    {% else %}
+        <div>
+            <a href="{{ path("fos_user_security_login") }}">{{ "layout.login"|trans({},'FOSUserBundle') }}</a>
+        </div>
+        <div>
+            <a href="{{ path("fos_user_registration_register") }}">{{ "layout.register"|trans({},'FOSUserBundle') }}</a>
+        </div>
+    {% endif %}
 {% endblock %}
