@@ -4,14 +4,13 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         return $this->render('main/index.html.twig');
     }
@@ -19,7 +18,7 @@ class DefaultController extends Controller
     /**
      * @Route("/dashboard", name="dashboard")
      */
-    public function dashboardAction(Request $request)
+    public function dashboardAction()
     {
         return $this->render('dashboard/index.html.twig');
     }
