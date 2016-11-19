@@ -1,6 +1,6 @@
 {
-  "name": "marcin/symfony3.base",
-  "license": "proprietary",
+  "name": "czarnodziej/symfony3-base",
+  "license": "MIT",
   "type": "project",
   "autoload": {
 	"psr-4": {
