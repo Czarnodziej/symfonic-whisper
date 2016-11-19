@@ -1,4 +1,21 @@
 main:
     welcome: "Welcome!"
-    dashboard: Dashboard
+    dashboard: "Dashboard"
     hello: "Hello world"
+    name: "Symfony3 Base"
+user:
+    edit: "Edit user"
+    id: "Id"
+    name: "Username"
+    email: "User email"
+    list: "User list"
+    create: "Create new user"
+    delete: "Delete user"
+
+form:
+    submit: "Submit"
+    delete: "Delete"
+    back: "Back to the list"
+    show: "Show"
+    edit: "Edit"
+    rtb: "Dashboard"

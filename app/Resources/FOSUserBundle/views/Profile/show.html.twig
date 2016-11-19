@@ -1,5 +1,20 @@
 {% extends "dashboard/index.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
 
 {% block content %}
-{% include "FOSUserBundle:Profile:show_content.html.twig" %}
+    <div class="col-md-4">
+        <div class="box">
+            <div class="box-body">
+                <ul class="list-unstyled">
+                    <li>{{ 'profile.show.username'|trans }}: {{ user.username }}</li>
+                    <li>{{ 'profile.show.email'|trans }}: {{ user.email }}</li>
+                </ul>
+
+                <div class="box-footer">
+                    <a href="{{ path('dashboard') }}" class="btn btn-default">{{ 'form.rtb'|trans({}, 'messages') }}</a>
+                    <a href="{{ path('fos_user_profile_edit') }}" class="btn btn-primary pull-right">{{ 'user.edit'|trans({}, 'messages') }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

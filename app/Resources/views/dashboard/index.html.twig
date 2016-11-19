@@ -16,18 +16,16 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 {% block contentHeader %}
-                <h1>
-                    Page Header
-                    <small>Optional description</small>
-                </h1>
                 {% endblock %}
             </section>
 
             <!-- Main content -->
             <section class="content">
-                {% block content %}
-                <!-- Your Page Content Here -->
-                {% endblock %}
+                <div class="row">
+                    {% block content %}
+                        <!-- Your Page Content Here -->
+                    {% endblock %}
+                </div>
             </section>
             <!-- /.content -->
         </div>
@@ -36,16 +34,6 @@
             {% include ":dashboard/partials:footer.html.twig" %}
         {% endblock %}
         <!-- Main Footer -->
-
-
-        <!-- Control Sidebar -->
-        {% block controlSidebar %}
-            {% include ":dashboard/partials:controlSidebar.html.twig" %}
-        {% endblock %}
-        <!-- /.control-sidebar -->
-        <!-- Add the sidebar's background. This div must be placed
-             immediately after the control sidebar -->
-        <div class="control-sidebar-bg"></div>
     </div>
 
 {% endblock %}

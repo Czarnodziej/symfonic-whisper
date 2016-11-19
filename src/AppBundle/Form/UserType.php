@@ -12,28 +12,20 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username')
-            ->add('email')
-        ;
+            ->add(
+                'username',
+                null,
+                array(
+                    'label' => 'user.name',
+                )
+            )
+            ->add(
+                'email',
+                null,
+                array(
+                    'label' => 'user.email',
+                )
+            );
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\User'
-        ));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix()
-    {
-        return 'appbundle_user';
-    }
-
 
 }

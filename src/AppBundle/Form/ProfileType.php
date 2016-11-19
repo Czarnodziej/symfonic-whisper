@@ -8,8 +8,20 @@ class ProfileType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('username')
-            ->add('email')
+        $builder->add(
+            'username',
+            null,
+            array(
+                'label' => 'user.name',
+            )
+        )
+            ->add(
+                'email',
+                null,
+                array(
+                    'label' => 'user.email',
+                )
+            )
             ->remove('current_password');
     }
 

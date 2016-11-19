@@ -1,16 +1,21 @@
 {% extends 'dashboard/index.html.twig' %}
 
 {% block content %}
-    <h1>User creation</h1>
+    <div class="col-md-6">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">{{ 'user.edit'|trans }}</h3>
+            </div>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('user_index') }}">Back to the list</a>
-        </li>
-    </ul>
+            {{ form_start(form) }}
+            <div class="box-body">
+                {{ form_widget(form) }}
+            </div>
+            <div class="box-footer">
+                <a class="btn btn-default" href="{{ path('user_index') }}">{{ 'form.back'|trans }}</a>
+                <button type="submit" class="btn btn-info pull-right">{{ 'form.submit'|trans }}</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock %}

@@ -1,28 +1,30 @@
 {% extends 'dashboard/index.html.twig' %}
 
 {% block content %}
-    <h1>User</h1>
+    <div class="col-md-6">
+        <div class="box">
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <div class="box-body">
+                <ul class="list-unstyled">
+                    <li>{{ 'user.id'|trans }}: {{ user.id }}</li>
+                    <li>{{ 'user.name'|trans }}: {{ user.username }}</li>
+                    <li>{{ 'user.email'|trans }}: {{ user.email }}</li>
+                </ul>
 
-    <ul>
-        <li>
-            <a href="{{ path('user_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+                <div class="box-footer">
+                    <div class="pull-right delete-edit-buttons">
+                        <a href="{{ path('user_edit', { 'id': user.id }) }}"
+                           class="btn btn-primary pull-right">{{ 'form.edit'|trans }}</a>
+
+                        {{ form_start(delete_form) }}
+                        <button class="btn btn-danger delete-button" type="submit">{{ 'user.delete'|trans }}</button>
+                        {{ form_end(delete_form) }}
+
+                    </div>
+                    <a href="{{ path('user_index') }}" class="btn btn-default">{{ 'form.back'|trans }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

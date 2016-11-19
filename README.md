@@ -1,16 +1,15 @@
 symfony3-base
 =============
 
-Requirements:
-- gulp
-- user bundle
-- basic frontend/backend logic
+Symfony 3 along with Fos User Bundle and AdminLte implemented.
+
+- locale in route
+- smoke tested
+- basic views
+- user manager for admins
 
 TODO:
- - redirect logged in users from login to dashboard after coming to /login path
- - redirect user to proper view after logged in resetted its password
- - flash after submitted forms
- - basic tests
+ - more tests
 
 Gulp:
 ```

@@ -14,3 +14,11 @@
 .user-side-header p {
     margin: 0;
 }
+
+.form-actions-table-th {
+    width: 120px;
+}
+
+.delete-edit-buttons {
+    width: 170px;
+}

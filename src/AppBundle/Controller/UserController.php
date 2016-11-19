@@ -36,6 +36,9 @@ class UserController extends Controller
      *
      * @Route("/new", name="user_new")
      * @Method({"GET", "POST"})
+     *
+     * @param Request $request
+     * @return $this
      */
     public function newAction(Request $request)
     {
@@ -46,7 +49,7 @@ class UserController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
-            $em->flush($user);
+            $em->flush();
 
             return $this->redirectToRoute('user_show', array('id' => $user->getId()));
         }
@@ -62,6 +65,9 @@ class UserController extends Controller
      *
      * @Route("/{id}", name="user_show")
      * @Method("GET")
+     *
+     * @param User $user The user entity
+     * @return $this
      */
     public function showAction(User $user)
     {
@@ -78,6 +84,10 @@ class UserController extends Controller
      *
      * @Route("/{id}/edit", name="user_edit")
      * @Method({"GET", "POST"})
+     *
+     * @param Request $request
+     * @param User $user The user entity
+     * @return $this
      */
     public function editAction(Request $request, User $user)
     {
@@ -103,6 +113,10 @@ class UserController extends Controller
      *
      * @Route("/{id}", name="user_delete")
      * @Method("DELETE")
+     *
+     * @param Request $request
+     * @param User $user The user entity
+     * @return $this
      */
     public function deleteAction(Request $request, User $user)
     {
@@ -112,7 +126,7 @@ class UserController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($user);
-            $em->flush($user);
+            $em->flush();
         }
 
         return $this->redirectToRoute('user_index');

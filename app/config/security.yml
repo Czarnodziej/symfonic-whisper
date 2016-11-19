@@ -37,4 +37,4 @@ security:
         - { path: '^/[a-z]+/register', role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: '^/[a-z]+/resetting', role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: '^/dashboard', role: ROLE_USER }
-        - { path: '^/user', role: ROLE_USER }
+        - { path: '^/user', role: ROLE_ADMIN }
