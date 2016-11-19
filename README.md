@@ -7,7 +7,6 @@ Requirements:
 - basic frontend/backend logic
 
 TODO:
- - language in route prefix
  - redirect logged in users from login to dashboard after coming to /login path
  - redirect user to proper view after logged in resetted its password
  - flash after submitted forms
