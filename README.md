@@ -1,15 +1,20 @@
 symfony3-base
 =============
 
-Symfony 3 along with Fos User Bundle and AdminLte implemented.
+Symfony3 with FosUserBundle and AdminLTE implemented.
 
 - locale in route
+- gulp tasks
 - smoke tested
 - basic views
 - user manager for admins
+- ready to rock!
 
-TODO:
- - more tests
+FAQ:
+
+- is it production ready?
+
+Should be. More tests needed.
 
 Gulp:
 ```
@@ -17,15 +22,15 @@ Gulp:
 gulp --prod
 ```
 
+Setup:
 
+1. [Fix permissions](http://symfony.com/doc/current/setup/file_permissions.html)
+
+2. Load db structure
 ```
-HTTPDUSER=`ps axo user,comm | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
-# if this doesn't work, try adding `-n` option
-sudo setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var
-sudo setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var
-
-#load db structure
 php bin/console doctrine:schema:update --force
-#add admin:admin user
+```
+3. Add admin:admin user
+```
 php bin/console doctrine:fixtures:load
 ```
