@@ -1,4 +1,4 @@
-symfony3-base
+Symfonic Whisper
 =============
 
 Symfony3 with FosUserBundle and AdminLTE implemented.

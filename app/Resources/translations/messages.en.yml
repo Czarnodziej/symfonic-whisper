@@ -2,7 +2,7 @@ main:
     welcome: "Welcome!"
     dashboard: "Dashboard"
     hello: "Hello world"
-    name: "Symfony3 Base"
+    name: "Symfonic Whisper"
 user:
     edit: "Edit user"
     id: "Id"
