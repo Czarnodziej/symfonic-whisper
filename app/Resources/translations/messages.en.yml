@@ -11,7 +11,6 @@ user:
     list: "User list"
     create: "Create new user"
     delete: "Delete user"
-
 form:
     submit: "Submit"
     delete: "Delete"
