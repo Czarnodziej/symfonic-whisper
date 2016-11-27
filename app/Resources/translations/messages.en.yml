@@ -18,3 +18,4 @@ form:
     show: "Show"
     edit: "Edit"
     rtb: "Dashboard"
+    deleteConfirm: "Please confirm deletion"

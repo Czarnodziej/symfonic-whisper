@@ -25,6 +25,8 @@
 {% block javascripts %}
     <script>
         var globalConfig = {};
+        globalConfig.currentLanguage     = '{{ app.request.locale }}';
+        globalConfig.deleteMessage       = '{{ 'form.deleteConfirm'|trans }}';
     </script>
     {% if app.environment == 'dev' %}
     <script src="{{ asset('js/script.js') }}"></script>

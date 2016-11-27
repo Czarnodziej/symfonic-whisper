@@ -1,0 +1,39 @@
+{% extends 'dashboard/index.html.twig' %}
+
+{% block content %}
+    <div class="col-md-6">
+        <div class="box box-primary">
+
+            {% block formTitleWrapper %}
+                <div class="box-header with-border">
+                    <h3 class="box-title">{% block formTitle formTitle %}</h3>
+                </div>
+            {% endblock %}
+
+            {{ form_start(form) }}
+            <div class="box-body">
+                {{ form_widget(form) }}
+            </div>
+            <div class="box-footer">
+                {% block formReturn %}
+                    <a class="btn btn-default" href="{% block returnRoute returnRoute %}">
+                        {{ returnLabel|default('form.back'|trans) }}
+                    </a>
+                {% endblock %}
+                <button type="submit" class="btn btn-info pull-right">{{ 'form.submit'|trans }}</button>
+            </div>
+
+            {{ form_end(form) }}
+            {% block formDelete %}
+                <div class="box-footer">
+                    {{ form_start(delete_form) }}
+                    {{ form_widget(delete_form) }}
+                    <input class="form-delete-button btn btn-danger pull-left" type="submit"
+                           value="{{ deleteLabel|default('form.delete'|trans) }}"/>
+                    {{ form_end(delete_form) }}
+                </div>
+            {% endblock %}
+
+        </div>
+    </div>
+{% endblock %}

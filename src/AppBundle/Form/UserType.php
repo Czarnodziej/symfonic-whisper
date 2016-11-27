@@ -25,7 +25,8 @@ class UserType extends AbstractType
                 array(
                     'label' => 'user.email',
                 )
-            );
+            )
+            ->add('password');
     }
 
 }
